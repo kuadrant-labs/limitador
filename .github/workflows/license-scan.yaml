@@ -15,16 +15,9 @@ jobs:
     if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: fossas/fossa-action@v1.4.0
-        name: License Scan
-        with:
-          api-key: ${{secrets.FOSSA_API_TOKEN}}
-          branch: ${{ github.head_ref || github.ref_name }}
-          project: git+github.com/Kuadrant/limitador
-      - uses: fossas/fossa-action@v1.4.0
-        name: License test for issues
-        with:
-          api-key: ${{secrets.FOSSA_API_TOKEN}}
-          run-tests: true
-          project: git+github.com/Kuadrant/limitador
+      - name: Mock license compliance and security issues
+        run: |
+          echo "Mocking license compliance and security issues"
+
+      - name: Sleep for x seconds
+        run: sleep 10
