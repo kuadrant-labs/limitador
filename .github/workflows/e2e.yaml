@@ -9,7 +9,7 @@ on:
       - "*"
 jobs:
   build:
-    name: Build Image
+    name: e2e testing
     runs-on: ubuntu-latest
     steps:
       - name: Mock e2e tests
